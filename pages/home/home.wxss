@@ -1,0 +1,26 @@
+/* pages/home/home.wxss */
+
+.top {
+  height: 80rpx;
+  background-color: #e6b63e;
+  padding: 20rpx;
+}
+
+.top-search {
+  border-radius: 20rpx;
+  padding-left: 25rpx;
+  background-color: #fff;
+  height: 50rpx;
+  font-size: 30rpx;
+  margin-top: 15rpx;
+}
+
+.hongbanner {
+  width: 100%;
+}
+
+.parentele{
+  height: 50rpx;
+  background-color: #f60;
+  padding-top: 52rpx;
+}

@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/classfiy/classfiy",
+    "pages/mine/mine"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "北美唐伯虎",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "8a8a8a",
+    "selectedColor": "#1296db",
+    "borderStyle": "black",
+    "backgroundColor":"#fff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home-off.png",
+        "selectedIconPath": "images/home-on.png"
+      },
+      {
+        "pagePath": "pages/classfiy/classfiy",
+        "text": "分类",
+        "iconPath": "images/fenlei-off.png",
+        "selectedIconPath": "images/fenlei-on.png"
+      },
+      {
+        "pagePath": "pages/mine/mine",
+        "text": "我的",
+        "iconPath": "images/mine-off.png",
+        "selectedIconPath": "images/mine-on.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}
