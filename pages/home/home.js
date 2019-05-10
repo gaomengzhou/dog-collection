@@ -18,11 +18,6 @@ Page({
     }
   },
 
-  paizhao(){
-    console.log("sssss")
-  },
-
-
   tryClick2(e) {
     wx.showActionSheet({
       itemList: this.data.dataList,
@@ -93,36 +88,6 @@ Page({
   clickToshow() {
     this.setData({
       show: !this.data.show
-    })
-  },
-
-  
-
-  shuaxin() {
-    // wx.startPullDownRefresh({
-    //   success() {
-    //     wx.showLoading({
-    //       title: '下拉刷新中',
-    //     })
-    //   }
-    // });
-
-
-
-      wx.stopPullDownRefresh({
-        success() {
-          wx.showToast({
-            title: '成功',
-          })
-        }
-      })
-
-
-  },
-
-  qingdian() {
-    wx.switchTab({
-      url: '../mine/mine',
     })
   },
 

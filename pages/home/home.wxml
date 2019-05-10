@@ -5,7 +5,7 @@
   </view>
   <switch bindtap='clickToshow'>{{!show?'显示':'隐藏'}}</switch>
   <view wx:if="{{show}}" class='shuaxin' bindtouchmove='shuaxin'>
-    <image class='hongbanner' src='../../images/homebanner.png' bindtap='qingdian'></image>
+    <image class='hongbanner' src='../../images/homebanner.png'></image>
   </view>
   <!-- <view>
     <text wx:for="{{arry}}" wx:key="{{index}}">
