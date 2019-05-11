@@ -19,8 +19,21 @@
   width: 100%;
 }
 
-.parentele{
-  height: 50rpx;
-  background-color: #f60;
-  padding-top: 52rpx;
+.bannerbox {
+  box-shadow: 1px 1px 3px #000;
+}
+
+.homelist {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.homechild {
+  margin-top: 3px;
+  width: 100%;
 }

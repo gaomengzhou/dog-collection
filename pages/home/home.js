@@ -1,4 +1,7 @@
 // pages/home/home.js
+import {
+  http
+} from "../../utils/index.js";
 Page({
 
   /**
@@ -6,96 +9,42 @@ Page({
    */
   data: {
     show: true,
-    arry: [1, 2, 3, 4, 5, 6, 7, 8, 9, 0],
-    dataList: ['吃饭', '睡觉', '宵夜', '唱歌'],
-    users: {
-      username: 'gao',
-      age: '17',
-    },
-    likeData: {
-      liker: 'gaogao',
-      count: '2019'
-    }
+    banner: [],
+    searchList: [],
+    homeList: []
   },
 
-  tryClick2(e) {
-    wx.showActionSheet({
-      itemList: this.data.dataList,
-      success: (res) => {
-        wx.showToast({
-          title: `${this.data.dataList[res.tapIndex]}`,
-        })
-        console.log(res.tapIndex)
-      },
-      fail(res) {
-        console.log(res.errMsg)
-      }
-    })
-
-  },
-
-  tryClick() {
-    wx.showModal({
-      title: '警告',
-      content: '一条普通的信息警告,选择确认或者取消',
-      cancelText: 'Shit',
-      confirmText: 'Fuck',
-      success(res) {
-        if (res.confirm) {
-          wx.showLoading({
-            title: '加载中',
-          })
-
-          setTimeout(function() {
-            wx.hideLoading()
-          }, 2000)
-          console.log('用户点击确定')
-        } else if (res.cancel) {
-          wx.showLoading({
-            title: '网络异常',
-          })
-
-          setTimeout(function() {
-            wx.hideLoading()
-          }, 2000)
-          console.log('用户点击取消')
-        }
-      }
+  searchDog(e) {
+    // wx.navigateTo({
+    //   url: '../search/search',
+    // })
+    let key = e.detail.value;
+    http(`https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152&keyword=${key}`, {}).then(res => {
+      console.log(res.data.petFamilyList)
+      this.setData({
+        searchList: res.data.petFamilyList
+      })
     })
   },
 
-  parent() {
-    console.log("父元素触发")
-    wx.showToast({
-      title: '父元素触发',
-    })
-  },
 
-  child1() {
-    console.log('子元素1触发')
-    wx.showToast({
-      title: '子元素1触发',
-    })
-  },
-
-  child2: () => {
-    console.log('子元素2触发')
-    wx.showToast({
-      title: '子元素2触发',
-    })
-  },
-
-  clickToshow() {
-    this.setData({
-      show: !this.data.show
-    })
-  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152&keyword&pageSize=6", {}).then(res => {
+      console.log(res.data.result.petFamilyList)
+      this.setData({
+        banner: res.data.result.petFamilyList
+      })
+    });
 
+    http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152&keyword&pageSize=141", {}).then(res => {
+      this.setData({
+        homeList: res.data.result.petFamilyList
+      })
+    })
   },
 
   /**
