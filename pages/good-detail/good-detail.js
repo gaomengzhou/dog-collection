@@ -1,10 +1,16 @@
 // pages/good-detail/good-detail.js
+import {
+  http
+} from "../../utils/index.js"
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    good: [],
+    banner: [],
   },
 
   /**
@@ -17,12 +23,12 @@ Page({
       title: options.title
     })
 
-    http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152&keyword&pageSize=141", {
-      petID: options.goodId
+    http("https://api.apishop.net/common/dogFamily/queryDogInfo?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152", {
+      petID: options.goodId,
     }).then(res => {
-      console.log(res.data.result.petFamilyList)
+      console.log(res.data.result)
       this.setData({
-        good: res.data.result.petFamilyList
+        good: res.data.result
       })
     })
   },
