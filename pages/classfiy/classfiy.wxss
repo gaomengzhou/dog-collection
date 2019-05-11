@@ -1,1 +1,37 @@
-/* pages/classfiy/classfiy.wxss */
+.col-class image {
+  width: 100%;
+  height: 350rpx;
+  margin-top: 25rpx;
+  margin-left: 20rpx;
+}
+
+.xiangqing {
+  border: 1px solid aliceblue;
+  width: 94%;
+  height: 400rpx;
+  margin: 15rpx auto;
+  border-radius: 6px 6px 6px 6px;
+}
+
+.a {
+  margin-left: 50rpx;
+  margin-top: 80rpx;
+}
+
+.b {
+  margin-top: 60rpx;
+  margin-left: 100rpx;
+}
+
+.a1 {
+  margin-bottom: 30rpx;
+}
+
+.a11 {
+  font-size: 30rpx;
+}
+
+.a2 {
+  margin-top: 30rpx;
+  font-size: 30rpx;
+}

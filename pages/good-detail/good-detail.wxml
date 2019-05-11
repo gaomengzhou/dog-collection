@@ -1,0 +1,9 @@
+<!--pages/good-detail/good-detail.wxml-->
+<view>
+  <navigator url="../good-detail/good-detail?goodId={{item.petID}}&title={{item.name}}">
+    <image src="{{item.img}}" style="width:100%;height:400rpx"> </image>
+    <view>
+      {{item.name}}
+    </view>
+  </navigator>
+</view>

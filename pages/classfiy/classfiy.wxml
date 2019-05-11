@@ -1,2 +1,28 @@
-<!--pages/classfiy/classfiy.wxml-->
-<text>pages/classfiy/classfiy.wxml</text>
+<i-notice-bar icon="systemprompt" loop>
+  哈士奇，金毛，阿拉斯加，牧羊犬，柯基，柴犬，英国斗牛犬，法国斗牛犬，恶霸犬全场8折！！！
+</i-notice-bar>
+
+<view class='xiangqing' wx:for="{{goods}}" wx:key="{{index}}">
+  <navigator url='../good-detail/good-detail?goodId={{item.petID}}&title={{item.name}}'>
+    <i-row>
+      <i-col span="12" i-class="col-class">
+        <image src='{{item.coverURL}}'></image>
+      </i-col>
+      <i-col span="12" i-class="col-class_1">
+        <view class='a'>
+          <view class='a1'>{{item.name}}</view>
+          <view class='a11'>{{item.engName}}</view>
+          <view class='a2'>￥：{{item.price}}</view>
+          <view class='b'>
+            <i-cell-group>
+              <i-cell>
+                <i-rate bind:change="onChange1" value="{{starIndex}}">
+                </i-rate>
+              </i-cell>
+            </i-cell-group>
+          </view>
+        </view>
+      </i-col>
+    </i-row>
+  </navigator>
+</view>

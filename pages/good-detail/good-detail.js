@@ -1,42 +1,38 @@
-// pages/classfiy/classfiy.js
-import {
-  http
-} from "../../utils/index.js"
-
+// pages/good-detail/good-detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    starIndex: 0,
-  },
-
-  onChange1(e) {
-    const index = e.detail.index;
-    this.setData({
-      'starIndex': index
-    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152&keyword&pageSize=141", {})
-      .then(res => {
-        console.log(res.data.result.petFamilyList)
-        this.setData({
-          goods: res.data.result.petFamilyList,
-          show: true,
-        })
+    console.log(options);
+
+    wx.setNavigationBarTitle({
+      title: options.title
+    })
+
+    http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152&keyword&pageSize=141", {
+      petID: options.goodId
+    }).then(res => {
+      console.log(res.data.result.petFamilyList)
+      this.setData({
+        good: res.data.result.petFamilyList
       })
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady() {},
+  onReady: function() {
+
+  },
 
   /**
    * 生命周期函数--监听页面显示

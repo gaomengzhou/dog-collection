@@ -1,10 +1,10 @@
 {
   "pages": [
-    "pages/home/home",
-    "pages/logs/logs",
     "pages/classfiy/classfiy",
+    "pages/home/home",
     "pages/index/index",
-    "pages/search/search"
+    "pages/logs/logs",
+    "pages/good-detail/good-detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -32,5 +32,14 @@
       }
     ]
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "i-card": "../dist/card/index",
+    "i-notice-bar": "../dist/notice-bar/index",
+    "i-modal": "../dist/modal/index",
+    "i-rate": "../dist/rate/index",
+    "i-grid": "../dist/grid/index",
+    "i-row": "../dist/row/index",
+    "i-col": "../dist/col/index"
+  }
 }
