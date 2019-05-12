@@ -2,10 +2,7 @@
 import {
   http
 } from "../../utils/index.js"
-<<<<<<< HEAD
-=======
 
->>>>>>> bc7360b36d78dc715c6008df9874155df0893dc3
 Page({
 
   /**
@@ -13,11 +10,7 @@ Page({
    */
   data: {
     good: [],
-<<<<<<< HEAD
     imgs: []
-=======
-    banner: [],
->>>>>>> bc7360b36d78dc715c6008df9874155df0893dc3
   },
 
   /**
@@ -36,25 +29,15 @@ Page({
     wx.setNavigationBarTitle({
       title: options.name,
     })
-<<<<<<< HEAD
+
     http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152", {
       keyword: options.name
     }).then(res => {
       console.log(res.data.result.petFamilyList[0])
       this.setData({
         imgs: res.data.result.petFamilyList[0]
-=======
-
-    http("https://api.apishop.net/common/dogFamily/queryDogInfo?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152", {
-      petID: options.goodId,
-    }).then(res => {
-      console.log(res.data.result)
-      this.setData({
-        good: res.data.result
->>>>>>> bc7360b36d78dc715c6008df9874155df0893dc3
       })
     })
-
   },
 
   /**
