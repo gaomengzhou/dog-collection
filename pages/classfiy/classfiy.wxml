@@ -3,26 +3,26 @@
 </i-notice-bar>
 
 <view class='xiangqing' wx:for="{{goods}}" wx:key="{{index}}">
-  <navigator url='../good-detail/good-detail?goodId={{item.petID}}&title={{item.name}}'>
-    <i-row>
-      <i-col span="12" i-class="col-class">
-        <image src='{{item.coverURL}}'></image>
-      </i-col>
-      <i-col span="12" i-class="col-class_1">
-        <view class='a'>
+  <i-row>
+    <i-col span="12" i-class="col-class">
+      <image src='{{item.coverURL}}'></image>
+    </i-col>
+    <i-col span="12" i-class="col-class_1">
+      <view class='a'>
+        <navigator url='../good-detail/good-detail?goodId={{item.petID}}&title={{item.name}}'>
           <view class='a1'>{{item.name}}</view>
           <view class='a11'>{{item.engName}}</view>
-          <view class='a2'>￥：{{item.price}}</view>
-          <view class='b'>
-            <i-cell-group>
-              <i-cell>
-                <i-rate bind:change="onChange1" value="{{starIndex}}">
-                </i-rate>
-              </i-cell>
-            </i-cell-group>
-          </view>
+        </navigator>
+        <view class='a2'>￥：{{item.price}}</view>
+        <view class='b'>
+          <i-cell-group>
+            <i-cell>
+              <i-rate bind:change="onChange1" value="{{starIndex}}">
+              </i-rate>
+            </i-cell>
+          </i-cell-group>
         </view>
-      </i-col>
-    </i-row>
-  </navigator>
+      </view>
+    </i-col>
+  </i-row>
 </view>

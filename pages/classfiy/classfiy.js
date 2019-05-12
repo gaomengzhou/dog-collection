@@ -25,7 +25,7 @@ Page({
   onLoad: function(options) {
     http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152&keyword&pageSize=141", {})
       .then(res => {
-        console.log(res.data.result.petFamilyList)
+        // console.log(res.data.result.petFamilyList)
         this.setData({
           goods: res.data.result.petFamilyList,
           show: true,

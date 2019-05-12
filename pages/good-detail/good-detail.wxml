@@ -1,6 +1,28 @@
 <!--pages/good-detail/good-detail.wxml-->
 <view>
+<<<<<<< HEAD
   <view>
     <image src='{{imgs.coverURL}}' class='detail-img'></image>
   </view>
+=======
+  <navigator url="../classfiy/classfiy?goodId={{item.petID}}&title={{item.name}}">
+  
+    <swiper 
+        indicator-dots="{{true}}" 
+        autoplay="{{true}}" 
+        interval="{{3000}}" 
+        duration="{{500}}" 
+        circular="{{true}}">
+      <block wx:for="{{banner}}" wx:key="{{index}}">
+        <swiper-item>
+          <image src="{{item.coverURL}}" class="slide-image hongbanner" width="100%" height="240" />
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view>
+      {{good.name}} {{good.engName}} {{good.character}} {{good.nation}}
+    </view>
+  </navigator>
+>>>>>>> bc7360b36d78dc715c6008df9874155df0893dc3
 </view>
