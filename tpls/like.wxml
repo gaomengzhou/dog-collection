@@ -1,7 +1,0 @@
-<template name="like">
-  <view>
-  <view>点赞--模版</view>
-    <view>liker--{{liker}}</view>
-    <view>count--{{count}}</view>
-  </view>
-</template>

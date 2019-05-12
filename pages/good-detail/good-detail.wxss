@@ -1,1 +1,5 @@
 /* pages/good-detail/good-detail.wxss */
+.detail-img{
+  width: 100%;
+  height: 260px;
+}

@@ -1,30 +1,42 @@
 // pages/good-detail/good-detail.js
+import {
+  http
+} from "../../utils/index.js"
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    good: [],
+    imgs: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options);
+    http("https://api.apishop.net/common/dogFamily/queryDogInfo?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152", {
+      petID: options.petID,
+    }).then(res => {
+      console.log(res.data.result)
+      this.setData({
+        good: res.data.result
+      })
+    });
 
     wx.setNavigationBarTitle({
-      title: options.title
+      title: options.name,
     })
-
-    http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152&keyword&pageSize=141", {
-      petID: options.goodId
+    http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152", {
+      keyword: options.name
     }).then(res => {
-      console.log(res.data.result.petFamilyList)
+      console.log(res.data.result.petFamilyList[0])
       this.setData({
-        good: res.data.result.petFamilyList
+        imgs: res.data.result.petFamilyList[0]
       })
     })
+
   },
 
   /**

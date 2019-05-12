@@ -18,8 +18,10 @@ Page({
     // wx.navigateTo({
     //   url: '../search/search',
     // })
-    let key = e.detail.value;
-    http(`https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152&keyword=${key}`, {}).then(res => {
+
+    http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152", {
+      keyword: e.detail.value
+    }).then(res => {
       console.log(res.data.petFamilyList)
       this.setData({
         searchList: res.data.petFamilyList
@@ -44,7 +46,10 @@ Page({
       this.setData({
         homeList: res.data.result.petFamilyList
       })
-    })
+    });
+
+
+    console.log(options)
   },
 
   /**
