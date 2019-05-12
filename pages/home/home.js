@@ -3,7 +3,6 @@ import {
   http
 } from "../../utils/index.js";
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -15,28 +14,16 @@ Page({
   },
 
   searchDog(e) {
-    // wx.navigateTo({
-    //   url: '../search/search',
-    // })
-
-    http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152", {
-      keyword: e.detail.value
-    }).then(res => {
-      console.log(res.data.petFamilyList)
-      this.setData({
-        searchList: res.data.petFamilyList
-      })
-    })
+    wx.navigateTo({
+      url: `../search/search?name=${e.detail.value}`,
+    });
   },
-
-
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
     http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152&keyword&pageSize=6", {}).then(res => {
-      console.log(res.data.result.petFamilyList)
       this.setData({
         banner: res.data.result.petFamilyList
       })
@@ -47,9 +34,6 @@ Page({
         homeList: res.data.result.petFamilyList
       })
     });
-
-
-    console.log(options)
   },
 
   /**

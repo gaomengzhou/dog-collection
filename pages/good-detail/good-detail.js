@@ -20,7 +20,6 @@ Page({
     http("https://api.apishop.net/common/dogFamily/queryDogInfo?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152", {
       petID: options.petID,
     }).then(res => {
-      console.log(res.data.result)
       this.setData({
         good: res.data.result
       })
@@ -33,7 +32,6 @@ Page({
     http("https://api.apishop.net/common/dogFamily/queryDogListByKeyword?apiKey=fjidkhv8da8252fb09984ee236efcd993c49d78b1b6e152", {
       keyword: options.name
     }).then(res => {
-      console.log(res.data.result.petFamilyList[0])
       this.setData({
         imgs: res.data.result.petFamilyList[0]
       })

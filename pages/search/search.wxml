@@ -1,2 +1,15 @@
 <!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view>
+ <view class='searchList'>
+    <view wx:for="{{searchList}}" wx:key="{{index}}" class='searchListchild'>
+      <navigator url="../good-detail/good-detail?petID={{item.petID}}&name={{item.name}}">
+        <image src='{{item.coverURL}}' class='list-img' />
+        <view class='textlist'>
+          <text>{{item.name}}</text>
+          <text>{{item.engName}}</text>
+          <text>{{item.price}}</text>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</view>

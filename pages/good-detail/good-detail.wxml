@@ -1,25 +1,23 @@
 <!--pages/good-detail/good-detail.wxml-->
 <view>
-  <view>
-    <image src='{{imgs.coverURL}}' class='detail-img'></image>
-  </view>
   <navigator url="../classfiy/classfiy?goodId={{item.petID}}&title={{item.name}}">
-  
-    <swiper 
-        indicator-dots="{{true}}" 
-        autoplay="{{true}}" 
-        interval="{{3000}}" 
-        duration="{{500}}" 
-        circular="{{true}}">
-      <block wx:for="{{banner}}" wx:key="{{index}}">
-        <swiper-item>
-          <image src="{{item.coverURL}}" class="slide-image hongbanner" width="100%" height="240" />
-        </swiper-item>
-      </block>
-    </swiper>
+
 
     <view>
-      {{good.name}} {{good.engName}} {{good.character}} {{good.nation}}
+      <image src='{{ imgs.coverURL}}'></image>
+      <!-- {{good.name}} {{good.engName}} {{good.character}} {{good.nation}} {{good.characterFeature}}  -->
     </view>
+    <view class='mz'>
+      <p class="p1">中文名:{{good.name}}</p>
+      <p class="p1">英文名:{{good.engName}}</p>
+      <p class="p1">特点:{{good.character}}</p>
+      <p class="p1">产地:{{good.nation}}</p>
+      <p class="p1">寿命:{{good.life}}</p>
+      <p class="p1">{{good.characterFeature}}</p>
+      <p>{{good.des}}</p>
+      <p>{{good.feature}}</p>
+      <p>{{good.feedPoints}}</p>
+    </view>
+
   </navigator>
 </view>

@@ -1,1 +1,30 @@
 /* pages/search/search.wxss */
+
+.searchList {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.searchListchild {
+  margin-top: 3px;
+  width: 48%;
+  height: 700rpx;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 2px #333;
+}
+
+.list-img {
+  width: 100%;
+  /* border: 1px solid #000; */
+}
+
+.textlist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}

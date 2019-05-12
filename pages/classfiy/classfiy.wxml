@@ -9,7 +9,7 @@
     </i-col>
     <i-col span="12" i-class="col-class_1">
       <view class='a'>
-        <navigator url='../good-detail/good-detail?goodId={{item.petID}}&title={{item.name}}'>
+        <navigator url='../good-detail/good-detail?petID={{item.petID}}&name={{item.name}}'>
           <view class='a1'>{{item.name}}</view>
           <view class='a11'>{{item.engName}}</view>
         </navigator>
